@@ -1,5 +1,4 @@
-﻿using Konditerka.AppData;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,18 +16,13 @@ using System.Windows.Shapes;
 namespace Konditerka.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Authoriz.xaml
+    /// Логика взаимодействия для RegPage.xaml
     /// </summary>
-    public partial class Authoriz : Page
+    public partial class RegPage : Page
     {
-        public Authoriz()
+        public RegPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AppFrame.framemain.Navigate(new RegPage());
         }
     }
 }
