@@ -42,6 +42,7 @@ namespace Konditerka.Pages
                 }
                 else
                 {
+                    AppData.CurrentUser.User = userobj;
                     MessageBox.Show("Здравствуйте, " + userobj.NameUser + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                     AppFrame.framemain.Navigate(new PageOutput());
                 }
