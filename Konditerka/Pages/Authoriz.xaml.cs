@@ -13,19 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Konditerka
+namespace Konditerka.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Authoriz.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Authoriz : Page
     {
-        public MainWindow()
+        public Authoriz()
         {
             InitializeComponent();
-            AppData.AppConnect.model0db = new KonditerEntities();
-            AppData.AppFrame.framemain = Mainframe;
-            Mainframe.Navigate(new Pages.Authoriz());
         }
     }
 }
