@@ -10,12 +10,12 @@
 
     <Grid Background="#FF420046">
         <Label Content="Авторизация" HorizontalAlignment="Center" Margin="0,28,0,0" VerticalAlignment="Top" FontFamily="Arial Black" Foreground="#FF176B5E" FontSize="36"/>
-        <Label Content="Введите логин" HorizontalAlignment="Left" Margin="260,120,0,0" VerticalAlignment="Top" FontFamily="Arial Black" Foreground="#FF176B5E" FontSize="20"/>
-        <TextBox x:Name="LoginBox" HorizontalAlignment="Center" Margin="0,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Height="31"/>
-        <Label Content="Введите пароль" HorizontalAlignment="Left" Margin="261,197,0,0" VerticalAlignment="Top" FontFamily="Arial Black" Foreground="#FF176B5E" FontSize="20"/>
-        <PasswordBox x:Name="PassBox" HorizontalAlignment="Center" Margin="0,230,0,0" VerticalAlignment="Top" Width="274" Height="31"/>
-        <Button x:Name="LoginButton" Content="Войти" HorizontalAlignment="Center" Margin="0,307,0,0" VerticalAlignment="Top" Width="274" Height="37" FontFamily="Arial Black" FontSize="16" Background="#FFE0C14D" Foreground="#FF176B5E"/>
-        <Button x:Name="OpenRegButton" Content="Зарегистрироватся" HorizontalAlignment="Center" Margin="0,349,0,0" VerticalAlignment="Top" Width="274" Height="37" FontFamily="Arial Black" FontSize="16" Background="#FFE0C14D" Foreground="#FF176B5E" Click="Button_Click"/>
+        <Label Content="Введите логин" HorizontalAlignment="Center" Margin="-100,120,0,0" VerticalAlignment="Top" FontFamily="Arial Black" Foreground="#FF176B5E" FontSize="20"/>
+        <TextBox x:Name="LoginBox" HorizontalAlignment="Center" Margin="0,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Height="31" AutomationProperties.Name="LoginBox"/>
+        <Label Content="Введите пароль" HorizontalAlignment="Center" Margin="-90,197,0,0" VerticalAlignment="Top" FontFamily="Arial Black" Foreground="#FF176B5E" FontSize="20"/>
+        <PasswordBox x:Name="PassBox" HorizontalAlignment="Center" Margin="0,230,0,0" VerticalAlignment="Top" Width="274" Height="31" AutomationProperties.Name="PassBox"/>
+        <Button x:Name="LoginButton" Content="Войти" HorizontalAlignment="Center" Margin="0,307,0,0" VerticalAlignment="Top" Width="274" Height="37" FontFamily="Arial Black" FontSize="16" Background="#FFE0C14D" Foreground="#FF176B5E" Click="LoginButton_Click"/>
+        <Button x:Name="OpenRegButton" Content="Зарегистрироватся" HorizontalAlignment="Center" Margin="0,349,0,0" VerticalAlignment="Top" Width="274" Height="37" FontFamily="Arial Black" FontSize="16" Background="#FFE0C14D" Foreground="#FF176B5E" Click="OpenRegButton_Click"/>
 
     </Grid>
 </Page>

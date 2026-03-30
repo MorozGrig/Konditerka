@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Konditerka"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Кондитерская" Height="450" Width="800">
     <Grid>
-        <Frame x:Name="Mainframe" Content="Frame"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="187*"/>
+        </Grid.ColumnDefinitions>
+        <Frame x:Name="Mainframe" Content="Frame" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>

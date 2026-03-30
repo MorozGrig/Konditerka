@@ -26,9 +26,30 @@ namespace Konditerka.Pages
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void OpenRegButton_Click(object sender, RoutedEventArgs e)
         {
             AppFrame.framemain.Navigate(new RegPage());
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var userobj = AppData.AppConnect.model0db.Users.FirstOrDefault(x => x.NameUser == LoginBox.Text && x.Password == PassBox.Password);
+                if (userobj == null)
+                {
+                    MessageBox.Show("Такого пользователя нет", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Здравствуйте, " + userobj.NameUser + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                    AppFrame.framemain.Navigate(new PageOutput());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка" + ex.Message.ToString(), "Критическая ошибка приложения", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

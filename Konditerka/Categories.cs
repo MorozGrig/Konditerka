@@ -22,7 +22,6 @@ namespace Konditerka
     
         public int IdCategory { get; set; }
         public string NameCategory { get; set; }
-        public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Catalogs> Catalogs { get; set; }
