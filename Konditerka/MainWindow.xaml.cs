@@ -23,7 +23,7 @@ namespace Konditerka
         public MainWindow()
         {
             InitializeComponent();
-            AppData.AppConnect.model0db = new KonditerEntities();
+            AppData.AppConnect.model0db = new KonditerEntities1();
             AppData.AppFrame.framemain = Mainframe;
             Mainframe.Navigate(new Pages.Authoriz());
         }

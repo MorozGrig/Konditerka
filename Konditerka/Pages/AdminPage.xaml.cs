@@ -11,7 +11,6 @@ namespace Konditerka.Pages
         public AdminPage()
         {
             InitializeComponent();
-            AdminContentFrame.Navigate(new ProductsAdminPage());
         }
 
         private void ProductsButton_Click(object sender, RoutedEventArgs e)
@@ -32,16 +31,6 @@ namespace Konditerka.Pages
         private void UsersButton_Click(object sender, RoutedEventArgs e)
         {
             AdminContentFrame.Navigate(new UsersAdminPage());
-        }
-
-        private void EmployeesButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Раздел сотрудников будет добавлен позже.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-        private void SuppliesButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Раздел поставок и ингредиентов будет добавлен позже.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
