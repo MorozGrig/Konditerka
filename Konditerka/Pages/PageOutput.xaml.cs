@@ -119,7 +119,7 @@ namespace Konditerka.Pages
 
         private void AddProductsButton_Click(object sender, RoutedEventArgs e)
         {
-            //AppFrame.framemain.Navigate(new AddProductPage());
+            AppFrame.framemain.Navigate(new AdminPage());
         }
 
         private void AddProductsButton_Loaded(object sender, RoutedEventArgs e)
@@ -128,6 +128,11 @@ namespace Konditerka.Pages
             {
                 AddProductsButton.Visibility = Visibility.Hidden;
                 AddProductsButton.IsEnabled = false;
+            }
+            else
+            {
+                AddProductsButton.Visibility = Visibility.Visible;
+                AddProductsButton.IsEnabled = true;
             }
         }
     }

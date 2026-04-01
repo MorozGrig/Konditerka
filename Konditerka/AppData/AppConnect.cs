@@ -8,6 +8,6 @@ namespace Konditerka.AppData
 {
     internal class AppConnect
     {
-        public static KonditerEntities model0db;
+        public static KonditerEntities1 model0db;
     }
 }

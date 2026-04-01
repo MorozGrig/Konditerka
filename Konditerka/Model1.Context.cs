@@ -13,10 +13,10 @@ namespace Konditerka
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class KonditerEntities : DbContext
+    public partial class KonditerEntities1 : DbContext
     {
-        public KonditerEntities()
-            : base("name=KonditerEntities")
+        public KonditerEntities1()
+            : base("name=KonditerEntities1")
         {
         }
     

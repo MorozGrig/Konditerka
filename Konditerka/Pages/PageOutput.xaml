@@ -10,10 +10,10 @@
 
     <Grid Background="#FF420046">
         <StackPanel x:Name="AddButton" Orientation="Horizontal" VerticalAlignment="Top" Grid.Row="0" Margin="0,14,0,0">
-            <ComboBox x:Name="ComboFilter" Margin="5" VerticalAlignment="Center" Width="209" Height="26" SelectionChanged="ComboFilter_SelectionChanged"/>
-            <ComboBox x:Name="ComboSort" Margin="5" VerticalAlignment="Top" Width="120" Height="26" SelectionChanged="ComboSort_SelectionChanged"/>
-            <TextBox x:Name="TextSearch"  Margin="5" TextWrapping="Wrap" VerticalAlignment="Center" Width="186" Height="26" TextChanged="TextSearch_TextChanged"/>
-            <Button x:Name="AddProductsButton" Content="Добавить продукт" Height="30" Width="150" Click="AddProductsButton_Click" Loaded="AddProductsButton_Loaded" />
+            <ComboBox x:Name="ComboFilter" Margin="5" VerticalAlignment="Center" Width="209" Height="26" SelectionChanged="ComboFilter_SelectionChanged" FontFamily="Arial Black"/>
+            <ComboBox x:Name="ComboSort" Margin="5" VerticalAlignment="Top" Width="120" Height="26" SelectionChanged="ComboSort_SelectionChanged" FontFamily="Arial Black"/>
+            <TextBox x:Name="TextSearch"  Margin="5" TextWrapping="Wrap" VerticalAlignment="Center" Width="186" Height="26" TextChanged="TextSearch_TextChanged" FontFamily="Arial Black" TabIndex="100"/>
+            <Button x:Name="AddProductsButton" Content="Панель администратора" Height="30" Width="200" Click="AddProductsButton_Click" Loaded="AddProductsButton_Loaded" FontFamily="Arial Black" Foreground="#FF176B5E" Background="#FFE0C14D" />
         </StackPanel>
 
         <ListView x:Name="ListProducts" Margin="0,64,0,79">
@@ -36,16 +36,16 @@
                                 <Image Source="{Binding CurrentPhoto}" Stretch="UniformToFill"/>
                             </Border>
                             <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Left">
-                                <TextBlock Height="auto" Text="{Binding Product}"/>
-                                <TextBlock TextWrapping="Wrap" Height="auto" Margin="0,0,0,10"><Run Text="Категория: "/><Run Text=" "/><Run Text="{Binding Categories.NameCategory}"/></TextBlock>
-                                <TextBlock TextWrapping="Wrap" Height="auto" Margin="0,0,0,10"><Run Text="Описание: "/><Run Text=" "/><Run Text="{Binding Descripton}"/></TextBlock>
-                                <TextBlock TextWrapping="Wrap" Height="auto" Margin="200,0,0,10"><Run Text="Цена: "/><Run Text=" "/><Run Text="{Binding Price}"/></TextBlock>
+                                <TextBlock Height="auto" Text="{Binding Product}" FontFamily="Arial Black"/>
+                                <TextBlock TextWrapping="Wrap" Height="auto" Margin="0,0,0,10" FontFamily="Arial Black"><Run Text="Категория: "/><Run Text=" "/><Run Text="{Binding Categories.NameCategory}"/></TextBlock>
+                                <TextBlock TextWrapping="Wrap" Height="auto" Margin="0,0,0,10" FontFamily="Arial Black"><Run Text="Описание: "/><Run Text=" "/><Run Text="{Binding Descripton}"/></TextBlock>
+                                <TextBlock TextWrapping="Wrap" Height="auto" Margin="200,0,0,10" FontFamily="Arial Black"><Run Text="Цена: "/><Run Text=" "/><Run Text="{Binding Price}"/></TextBlock>
                             </StackPanel>
                         </Grid>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBlock x:Name="tbCounter" Margin="0,386,0,0" />
+        <TextBlock x:Name="tbCounter" Height="auto" Margin="0,386,0,0" FontFamily="Arial Black" />
     </Grid>
 </Page>

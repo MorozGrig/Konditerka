@@ -23,11 +23,9 @@ namespace Konditerka
         public int IdBasket { get; set; }
         public int IdUser { get; set; }
         public decimal TotalPrice { get; set; }
-        public byte IsOrdered { get; set; }
+        public bool IsOrdered { get; set; }
         public System.DateTime CreateDate { get; set; }
-        public int IdOrder { get; set; }
     
-        public virtual Orders Orders { get; set; }
         public virtual Users Users { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BasketsCatalogs> BasketsCatalogs { get; set; }

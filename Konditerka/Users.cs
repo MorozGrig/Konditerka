@@ -18,7 +18,6 @@ namespace Konditerka
         public Users()
         {
             this.Baskets = new HashSet<Baskets>();
-            this.Orders = new HashSet<Orders>();
         }
     
         public int IdUser { get; set; }
@@ -29,8 +28,6 @@ namespace Konditerka
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Baskets> Baskets { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
         public virtual Roles Roles { get; set; }
     }
 }

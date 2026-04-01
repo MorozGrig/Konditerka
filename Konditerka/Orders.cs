@@ -17,7 +17,6 @@ namespace Konditerka
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Orders()
         {
-            this.Baskets = new HashSet<Baskets>();
             this.OrdersCatalogs = new HashSet<OrdersCatalogs>();
         }
     
@@ -27,10 +26,7 @@ namespace Konditerka
         public System.DateTime Data { get; set; }
         public decimal Price { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Baskets> Baskets { get; set; }
         public virtual StatusOrders StatusOrders { get; set; }
-        public virtual Users Users { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrdersCatalogs> OrdersCatalogs { get; set; }
     }
