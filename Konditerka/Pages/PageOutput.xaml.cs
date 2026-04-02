@@ -135,5 +135,10 @@ namespace Konditerka.Pages
         {
             
         }
+
+        private void GoToBasketButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            AppFrame.framemain.Navigate(new BasketPage());
+        }
     }
 }
