@@ -70,8 +70,6 @@ namespace Konditerka.Pages
             RefreshData();
         }
 
-        private void RefreshButton_Click(object sender, RoutedEventArgs e) => RefreshData();
-
         private void CategoriesGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _selectedCategory = CategoriesGrid.SelectedItem as Categories;

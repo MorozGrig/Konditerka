@@ -98,8 +98,6 @@ namespace Konditerka.Pages
             RefreshData();
         }
 
-        private void RefreshButton_Click(object sender, RoutedEventArgs e) => RefreshData();
-
         private void OrdersGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             _selectedOrder = OrdersGrid.SelectedItem as Orders;

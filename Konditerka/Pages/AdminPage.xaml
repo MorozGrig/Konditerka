@@ -15,13 +15,13 @@
 
         <StackPanel Orientation="Horizontal" Margin="10">
             <Button Content="Товары" Width="120" Height="32" Margin="0,0,8,0" Click="ProductsButton_Click"
-                    FontFamily="Arial Black" Foreground="#FF176B5E" Background="#FFE0C14D"/>
+                    FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
             <Button Content="Категории" Width="120" Height="32" Margin="0,0,8,0" Click="CategoriesButton_Click"
-                    FontFamily="Arial Black" Foreground="#FF176B5E" Background="#FFE0C14D"/>
+                    FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
             <Button Content="Заказы" Width="120" Height="32" Margin="0,0,8,0" Click="OrdersButton_Click"
-                    FontFamily="Arial Black" Foreground="#FF176B5E" Background="#FFE0C14D"/>
+                    FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
             <Button Content="Пользователи" Width="140" Height="32" Margin="0,0,8,0" Click="UsersButton_Click"
-                    FontFamily="Arial Black" Foreground="#FF176B5E" Background="#FFE0C14D"/>
+                    FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
         </StackPanel>
 
         <Frame x:Name="AdminContentFrame" Grid.Row="1" Margin="10" NavigationUIVisibility="Hidden"/>
