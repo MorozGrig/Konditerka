@@ -32,31 +32,29 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Orientation="Vertical" Margin="0,0,10,0">
-                <TextBlock Text="Название десерта" Foreground="#FF176B5E" FontFamily="Arial Black"/>
+                <TextBlock Text="Название десерта" Foreground="#FF82DBFF" FontFamily="Arial Black"/>
                 <TextBox x:Name="ProductNameBox" Height="28" Margin="0,4,0,8" FontFamily="Arial Black"/>
 
-                <TextBlock Text="Категория" Foreground="#FF176B5E" FontFamily="Arial Black"/>
+                <TextBlock Text="Категория" Foreground="#FF82DBFF" FontFamily="Arial Black"/>
                 <ComboBox x:Name="CategoryBox" Height="28" Margin="0,4,0,8" DisplayMemberPath="NameCategory" SelectedValuePath="IdCategory" FontFamily="Arial Black"/>
 
-                <TextBlock Text="Цена" Foreground="#FF176B5E" FontFamily="Arial Black"/>
+                <TextBlock Text="Цена" Foreground="#FF82DBFF" FontFamily="Arial Black"/>
                 <TextBox x:Name="PriceBox" Height="28" Margin="0,4,0,8" FontFamily="Arial Black"/>
 
-                <TextBlock Text="Описание" Foreground="#FF176B5E" FontFamily="Arial Black"/>
+                <TextBlock Text="Описание" Foreground="#FF82DBFF" FontFamily="Arial Black"/>
                 <TextBox x:Name="DescriptionBox" Height="60" Margin="0,4,0,8" TextWrapping="Wrap" AcceptsReturn="True" FontFamily="Arial Black"/>
 
-                <TextBlock Text="Путь к изображению" Foreground="#FF176B5E" FontFamily="Arial Black"/>
-                <TextBox x:Name="PhotoPathBox" Height="28" Margin="0,4,0,8" FontFamily="Arial Black"/>
+                <TextBlock Text="Путь к изображению" Foreground="#FF82DBFF" FontFamily="Arial Black"/>
+                <TextBox x:Name="PhotoPathBox" Height="28" Margin="0,4,0,8" FontFamily="Arial Black" GotFocus="PhotoPathBox_GotFocus"/>
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Bottom">
+            <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" Margin="0,0,10,0">
                 <Button Content="Добавить" Width="150" Height="34" Margin="0,0,0,8" Click="AddButton_Click"
-                        FontFamily="Arial Black" Foreground="#FF176B5E" Background="#FFE0C14D"/>
+                        FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
                 <Button Content="Сохранить" Width="150" Height="34" Margin="0,0,0,8" Click="EditButton_Click"
-                        FontFamily="Arial Black" Foreground="#FF176B5E" Background="#FFE0C14D"/>
+                        FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
                 <Button Content="Удалить" Width="150" Height="34" Margin="0,0,0,8" Click="DeleteButton_Click"
-                        FontFamily="Arial Black" Foreground="#FF176B5E" Background="#FFE0C14D"/>
-                <Button Content="Обновить" Width="150" Height="34" Click="RefreshButton_Click"
-                        FontFamily="Arial Black" Foreground="#FF176B5E" Background="#FFE0C14D"/>
+                        FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
             </StackPanel>
         </Grid>
     </Grid>

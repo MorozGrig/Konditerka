@@ -15,7 +15,7 @@ namespace Konditerka.Pages
 
         private void ProductsButton_Click(object sender, RoutedEventArgs e)
         {
-            AdminContentFrame.Navigate(new ProductsAdminPage());
+            AdminContentFrame.Navigate(new ProductsAdminPage(null));
         }
 
         private void CategoriesButton_Click(object sender, RoutedEventArgs e)

@@ -57,20 +57,6 @@ namespace Konditerka.Pages
             return true;
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (!ValidateForm()) return;
-            AppConnect.model0db.Users.Add(new Users
-            {
-                NameUser = UserNameBox.Text.Trim(),
-                Email = EmailBox.Text.Trim(),
-                Password = PasswordBox.Text,
-                IdRole = (int)RoleBox.SelectedValue
-            });
-            AppConnect.model0db.SaveChanges();
-            RefreshData();
-        }
-
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
             if (_selectedUser == null)
@@ -102,8 +88,6 @@ namespace Konditerka.Pages
             AppConnect.model0db.SaveChanges();
             RefreshData();
         }
-
-        private void RefreshButton_Click(object sender, RoutedEventArgs e) => RefreshData();
 
         private void UsersGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

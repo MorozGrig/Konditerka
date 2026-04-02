@@ -129,11 +129,6 @@ namespace Konditerka.Pages
                 AddProductsButton.Visibility = Visibility.Hidden;
                 AddProductsButton.IsEnabled = false;
             }
-            else
-            {
-                AddProductsButton.Visibility = Visibility.Visible;
-                AddProductsButton.IsEnabled = true;
-            }
         }
     }
 }
