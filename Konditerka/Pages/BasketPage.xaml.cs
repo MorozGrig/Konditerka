@@ -129,7 +129,15 @@ namespace Konditerka.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка оформления заказа: " + ex.Message);
+                string message = ex.Message;
+
+                if (ex.InnerException != null)
+                    message += "\n\nInner: " + ex.InnerException.Message;
+
+                if (ex.InnerException?.InnerException != null)
+                    message += "\n\nSQL: " + ex.InnerException.InnerException.Message;
+
+                MessageBox.Show(message, "Ошибка оформления заказа");
             }
         }
 
