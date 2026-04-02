@@ -186,9 +186,6 @@ namespace Konditerka.Pages
                     document.Add(logoImage);
                 }
 
-                Font titleFont = CreatePdfFont(16, true);
-                Font regularFont = CreatePdfFont(11, false);
-
                 document.Add(new Paragraph("Чек кондитерской", titleFont) { Alignment = Element.ALIGN_CENTER });
                 document.Add(new Paragraph($"Номер заказа: {order.IdOrder}", regularFont));
                 document.Add(new Paragraph($"Дата: {order.Data:dd.MM.yyyy HH:mm}", regularFont));
@@ -232,8 +229,6 @@ namespace Konditerka.Pages
         private static void AddCell(PdfPTable table, string text, bool isHeader)
         {
             Font font = isHeader
-                ? CreatePdfFont(10, true)
-                : CreatePdfFont(10, false);
 
             PdfPCell cell = new PdfPCell(new Phrase(text, font))
             {
@@ -274,40 +269,6 @@ namespace Konditerka.Pages
             };
 
             return candidatePaths.FirstOrDefault(File.Exists);
-        }
-
-
-        private static Font CreatePdfFont(float size, bool bold)
-        {
-            string customFontPath = GetUnicodeFontPath(bold);
-            if (!string.IsNullOrWhiteSpace(customFontPath) && File.Exists(customFontPath))
-            {
-                BaseFont unicodeBaseFont = BaseFont.CreateFont(customFontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-                return new Font(unicodeBaseFont, size, bold ? Font.BOLD : Font.NORMAL);
-            }
-
-            return bold
-                ? FontFactory.GetFont(FontFactory.HELVETICA_BOLD, size)
-                : FontFactory.GetFont(FontFactory.HELVETICA, size);
-        }
-
-        private static string GetUnicodeFontPath(bool bold)
-        {
-            string windowsFonts = Environment.GetFolderPath(Environment.SpecialFolder.Fonts);
-            string[] candidates = bold
-                ? new[] { "arialbd.ttf", "timesbd.ttf", "calibrib.ttf", "verdanab.ttf", "tahomabd.ttf" }
-                : new[] { "arial.ttf", "times.ttf", "calibri.ttf", "verdana.ttf", "tahoma.ttf" };
-
-            foreach (string fileName in candidates)
-            {
-                string path = Path.Combine(windowsFonts, fileName);
-                if (File.Exists(path))
-                {
-                    return path;
-                }
-            }
-
-            return null;
         }
 
         private void GoToCatalogButton_Click(object sender, RoutedEventArgs e)
