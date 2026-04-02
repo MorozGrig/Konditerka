@@ -16,7 +16,11 @@
             <Button x:Name="AddProductsButton" Content="Панель администратора" Height="30" Width="200" Click="AddProductsButton_Click" Loaded="AddProductsButton_Loaded" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D" />
             <Button x:Name="GoToBasketButton" Margin="5,0,0,0" Height="30" Width="50" FontFamily="Arial Black" Foreground="Black" >
                 <Button.Background>
-                    <ImageBrush ImageSource="/Pages/3b792c505de0362430f21af891458318.png" TileMode="None" Stretch="UniformToFill"/>
+                    <ImageBrush Stretch="Uniform" TileMode="None">
+                        <ImageBrush.ImageSource>
+                            <BitmapImage CacheOption="OnLoad" CreateOptions="IgnoreImageCache" UriSource="file:///C:/Users/10230041/AppData/Local/Microsoft/VisualStudio/18.0_0c9a9fdb/Designer/Cache/1459142291x86DD/Pages/-shopping-cart_90604.png"/>
+                        </ImageBrush.ImageSource>
+                    </ImageBrush>
                 </Button.Background>
             </Button>
         </StackPanel>
