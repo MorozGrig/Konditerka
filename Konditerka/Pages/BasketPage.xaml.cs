@@ -129,15 +129,7 @@ namespace Konditerka.Pages
             }
             catch (Exception ex)
             {
-                string message = ex.Message;
 
-                if (ex.InnerException != null)
-                    message += "\n\nInner: " + ex.InnerException.Message;
-
-                if (ex.InnerException?.InnerException != null)
-                    message += "\n\nSQL: " + ex.InnerException.InnerException.Message;
-
-                MessageBox.Show(message, "Ошибка оформления заказа");
             }
         }
 
@@ -194,9 +186,14 @@ namespace Konditerka.Pages
                     document.Add(logoImage);
                 }
 
-                document.Add(new Paragraph("Чек кондитерской", titleFont) { Alignment = Element.ALIGN_CENTER });
-                document.Add(new Paragraph($"Номер заказа: {order.IdOrder}", regularFont));
-                document.Add(new Paragraph($"Дата: {order.Data:dd.MM.yyyy HH:mm}", regularFont));
+                iTextSharp.text.Font titleFont = CreatePdfFont(16f, iTextSharp.text.Font.BOLD);
+                iTextSharp.text.Font regularFont = CreatePdfFont(11f, iTextSharp.text.Font.NORMAL);
+
+                Paragraph title = new Paragraph(new Phrase("Чек кондитерской", titleFont));
+                title.Alignment = Element.ALIGN_CENTER;
+                document.Add(title);
+                document.Add(new Paragraph(new Phrase($"Номер заказа: {order.IdOrder}", regularFont)));
+                document.Add(new Paragraph(new Phrase($"Дата: {order.Data:dd.MM.yyyy HH:mm}", regularFont)));
                 document.Add(new Paragraph(" "));
 
                 PdfPTable table = new PdfPTable(4)
@@ -220,14 +217,14 @@ namespace Konditerka.Pages
 
                 document.Add(table);
                 document.Add(new Paragraph(" "));
-                document.Add(new Paragraph($"ИТОГО: {order.Price:N2} ₽", titleFont));
+                document.Add(new Paragraph(new Phrase($"ИТОГО: {order.Price:N2} ₽", titleFont)));
                 document.Add(new Paragraph(" "));
 
                 byte[] qrCodeBytes = GenerateQrCode(order, items);
                 iTextSharp.text.Image qrImage = iTextSharp.text.Image.GetInstance(qrCodeBytes);
                 qrImage.ScaleToFit(140f, 140f);
                 qrImage.Alignment = Element.ALIGN_RIGHT;
-                document.Add(new Paragraph("QR-данные заказа:", regularFont));
+                document.Add(new Paragraph(new Phrase("QR-данные заказа:", regularFont)));
                 document.Add(qrImage);
 
                 document.Close();
@@ -236,9 +233,11 @@ namespace Konditerka.Pages
 
         private static void AddCell(PdfPTable table, string text, bool isHeader)
         {
-            Font font = isHeader
+            iTextSharp.text.Font font = isHeader
+                ? CreatePdfFont(10f, iTextSharp.text.Font.BOLD)
+                : CreatePdfFont(10f, iTextSharp.text.Font.NORMAL);
 
-            PdfPCell cell = new PdfPCell(new Phrase(text, font))
+            PdfPCell cell = new PdfPCell(new Phrase(text ?? string.Empty, font))
             {
                 HorizontalAlignment = Element.ALIGN_LEFT,
                 Padding = 5f
@@ -277,6 +276,54 @@ namespace Konditerka.Pages
             };
 
             return candidatePaths.FirstOrDefault(File.Exists);
+        }
+
+        private static iTextSharp.text.Font CreatePdfFont(float size, int style)
+        {
+            BaseFont unicodeBaseFont = GetUnicodeBaseFont();
+            if (unicodeBaseFont != null)
+            {
+                return new iTextSharp.text.Font(unicodeBaseFont, size, style);
+            }
+
+            return style == iTextSharp.text.Font.BOLD
+                ? FontFactory.GetFont(FontFactory.HELVETICA_BOLD, size)
+                : FontFactory.GetFont(FontFactory.HELVETICA, size);
+        }
+
+        private static BaseFont GetUnicodeBaseFont()
+        {
+            string regularPath = GetUnicodeFontPath();
+            if (string.IsNullOrWhiteSpace(regularPath) || !File.Exists(regularPath))
+            {
+                return null;
+            }
+
+            return BaseFont.CreateFont(regularPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+        }
+
+        private static string GetUnicodeFontPath()
+        {
+            string windowsFonts = Environment.GetFolderPath(Environment.SpecialFolder.Fonts);
+            string[] candidates =
+            {
+                "arial.ttf",
+                "times.ttf",
+                "calibri.ttf",
+                "verdana.ttf",
+                "tahoma.ttf"
+            };
+
+            foreach (string fileName in candidates)
+            {
+                string path = Path.Combine(windowsFonts, fileName);
+                if (File.Exists(path))
+                {
+                    return path;
+                }
+            }
+
+            return null;
         }
 
         private void GoToCatalogButton_Click(object sender, RoutedEventArgs e)
