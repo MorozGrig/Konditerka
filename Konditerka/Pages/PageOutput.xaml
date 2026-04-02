@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Konditerka.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800" MinHeight="500"
       Title="PageOutput">
 
     <Grid Background="#FF420046">
@@ -14,6 +14,11 @@
             <ComboBox x:Name="ComboSort" Margin="5" VerticalAlignment="Top" Width="120" Height="26" SelectionChanged="ComboSort_SelectionChanged" FontFamily="Arial Black"/>
             <TextBox x:Name="TextSearch"  Margin="5" TextWrapping="Wrap" VerticalAlignment="Center" Width="186" Height="26" TextChanged="TextSearch_TextChanged" FontFamily="Arial Black" TabIndex="100"/>
             <Button x:Name="AddProductsButton" Content="Панель администратора" Height="30" Width="200" Click="AddProductsButton_Click" Loaded="AddProductsButton_Loaded" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D" />
+            <Button x:Name="GoToBasketButton" Margin="5,0,0,0" Height="30" Width="50" FontFamily="Arial Black" Foreground="Black" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/Pages/3b792c505de0362430f21af891458318.png" TileMode="None" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
         </StackPanel>
 
         <ListView x:Name="ListProducts" Margin="0,64,0,79">
@@ -39,13 +44,14 @@
                                 <TextBlock Height="auto" Text="{Binding Product}" FontFamily="Arial Black"/>
                                 <TextBlock TextWrapping="Wrap" Height="auto" Margin="0,0,0,10" FontFamily="Arial Black"><Run Text="Категория: "/><Run Text=" "/><Run Text="{Binding Categories.NameCategory}"/></TextBlock>
                                 <TextBlock TextWrapping="Wrap" Height="auto" Margin="0,0,0,10" FontFamily="Arial Black"><Run Text="Описание: "/><Run Text=" "/><Run Text="{Binding Descripton}"/></TextBlock>
-                                <TextBlock TextWrapping="Wrap" Height="auto" Margin="200,0,0,10" FontFamily="Arial Black"><Run Text="Цена: "/><Run Text=" "/><Run Text="{Binding Price}"/></TextBlock>
+                                <TextBlock TextWrapping="Wrap" Height="auto" Margin="0,0,0,10" FontFamily="Arial Black"><Run Text="Цена: "/><Run Text=" "/><Run Text="{Binding Price}"/></TextBlock>
+                                <Button x:Name="AddToBusketButton" Content="Добавить в корзину" Margin="0,50,300,10" Height="30" Width="150" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D" Click="AddToBusketButton_Click"/>
                             </StackPanel>
                         </Grid>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBlock x:Name="tbCounter" Height="auto" Margin="0,386,0,0" FontFamily="Arial Black" />
+        <TextBlock x:Name="tbCounter" Height="auto" Margin="10,386,0,0" FontFamily="Arial Black" />
     </Grid>
 </Page>

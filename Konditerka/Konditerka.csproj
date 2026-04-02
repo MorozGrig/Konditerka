@@ -233,6 +233,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Pages\3b792c505de0362430f21af891458318.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />

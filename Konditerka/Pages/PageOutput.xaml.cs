@@ -130,5 +130,10 @@ namespace Konditerka.Pages
                 AddProductsButton.IsEnabled = false;
             }
         }
+
+        private void AddToBusketButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
