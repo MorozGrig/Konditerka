@@ -194,9 +194,6 @@ namespace Konditerka.Pages
                     document.Add(logoImage);
                 }
 
-                Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
-                Font regularFont = FontFactory.GetFont(FontFactory.HELVETICA, 11);
-
                 document.Add(new Paragraph("Чек кондитерской", titleFont) { Alignment = Element.ALIGN_CENTER });
                 document.Add(new Paragraph($"Номер заказа: {order.IdOrder}", regularFont));
                 document.Add(new Paragraph($"Дата: {order.Data:dd.MM.yyyy HH:mm}", regularFont));
@@ -240,8 +237,6 @@ namespace Konditerka.Pages
         private static void AddCell(PdfPTable table, string text, bool isHeader)
         {
             Font font = isHeader
-                ? FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 10)
-                : FontFactory.GetFont(FontFactory.HELVETICA, 10);
 
             PdfPCell cell = new PdfPCell(new Phrase(text, font))
             {
