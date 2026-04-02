@@ -129,7 +129,7 @@ namespace Konditerka.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ошибка оформления заказа: " + ex.Message);
+
             }
         }
 
