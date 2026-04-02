@@ -133,7 +133,37 @@ namespace Konditerka.Pages
 
         private void AddToBusketButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            try
+            {
+                if (!BasketManager.IsUserAuthorized())
+                {
+                    MessageBox.Show("Сначала войдите в систему, чтобы добавлять товары в корзину.");
+                    return;
+                }
+
+                Button button = sender as Button;
+                Catalogs selectedProduct = button?.DataContext as Catalogs;
+                if (selectedProduct == null)
+                {
+                    MessageBox.Show("Не удалось определить выбранный товар.");
+                    return;
+                }
+
+                Catalogs dbProduct = AppConnect.model0db.Catalogs.FirstOrDefault(x => x.IdCatalog == selectedProduct.IdCatalog);
+                if (dbProduct == null)
+                {
+                    MessageBox.Show("Товар не найден в базе данных.");
+                    return;
+                }
+
+                BasketManager.AddToBasket(dbProduct);
+                decimal total = BasketManager.GetCurrentBasketTotal();
+                MessageBox.Show($"Товар \"{dbProduct.Product}\" добавлен в корзину. Текущая сумма: {total:N2} ₽");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Не удалось добавить товар в корзину: " + ex.Message);
+            }
         }
 
         private void GoToBasketButton_Click_1(object sender, RoutedEventArgs e)
