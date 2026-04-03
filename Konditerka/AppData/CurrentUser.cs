@@ -9,6 +9,6 @@ namespace Konditerka.AppData
     public class CurrentUser
     {
         public static Users User { get; set; }
-        public static bool IsAdmin => User?.Roles.IdRole == 2;
+        public static bool IsAdmin => User?.Roles?.IdRole == 2;
     }
 }

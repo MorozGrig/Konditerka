@@ -223,7 +223,7 @@ namespace Konditerka.Pages
                 byte[] qrCodeBytes = GenerateQrCode(order, items);
                 iTextSharp.text.Image qrImage = iTextSharp.text.Image.GetInstance(qrCodeBytes);
                 qrImage.ScaleToFit(140f, 140f);
-                qrImage.Alignment = Element.ALIGN_RIGHT;
+                qrImage.Alignment = Element.ALIGN_CENTER;
                 document.Add(new Paragraph(new Phrase("QR-данные заказа:", regularFont)));
                 document.Add(qrImage);
 
