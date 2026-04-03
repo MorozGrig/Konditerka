@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Konditerka.AppData;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Konditerka.Pages
@@ -31,6 +32,11 @@ namespace Konditerka.Pages
         private void UsersButton_Click(object sender, RoutedEventArgs e)
         {
             AdminContentFrame.Navigate(new UsersAdminPage());
+        }
+
+        private void GoToCatalogButton_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.framemain.Navigate(new PageOutput());
         }
     }
 }

@@ -135,12 +135,6 @@ namespace Konditerka.Pages
         {
             try
             {
-                if (!BasketManager.IsUserAuthorized())
-                {
-                    MessageBox.Show("Сначала войдите в систему, чтобы добавлять товары в корзину.");
-                    return;
-                }
-
                 Button button = sender as Button;
                 Catalogs selectedProduct = button?.DataContext as Catalogs;
                 if (selectedProduct == null)

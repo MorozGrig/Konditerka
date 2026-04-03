@@ -24,7 +24,7 @@
                   IsReadOnly="True"
                   CanUserAddRows="False"
                   HeadersVisibility="Column"
-                  Background="White">
+                  Background="White" FontFamily="Arial Black">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Товар" Width="*" Binding="{Binding ProductName}"/>
                 <DataGridTextColumn Header="Цена, ₽" Width="120" Binding="{Binding Price, StringFormat=N2}"/>
@@ -47,7 +47,7 @@
         </DataGrid>
 
         <DockPanel Grid.Row="2" Margin="5">
-            <Button Content="Вернуться в каталог"
+            <Button x:Name="GoToCatalogButton" Content="Вернуться в каталог"
                     Width="190"
                     Height="32"
                     FontFamily="Arial Black"
