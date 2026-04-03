@@ -180,7 +180,10 @@ namespace Konditerka.Pages
                 string logoPath = GetLogoPath();
                 if (!string.IsNullOrWhiteSpace(logoPath) && File.Exists(logoPath))
                 {
-                    iTextSharp.text.Image logoImage = iTextSharp.text.Image.GetInstance(logoPath);
+
+
+
+                    iTextSharp.text.Image logoImage = iTextSharp.text.Image.GetInstance(logoPath);      
                     logoImage.ScaleToFit(120f, 120f);
                     logoImage.Alignment = Element.ALIGN_CENTER;
                     document.Add(logoImage);
@@ -193,7 +196,7 @@ namespace Konditerka.Pages
                 title.Alignment = Element.ALIGN_CENTER;
                 document.Add(title);
                 document.Add(new Paragraph(new Phrase($"Номер заказа: {order.IdOrder}", regularFont)));
-                document.Add(new Paragraph(new Phrase($"Дата: {order.Data:dd.MM.yyyy HH:mm}", regularFont)));
+                document.Add(new Paragraph(new Phrase($"Дата: {order.Data:dd.MM.yyyy HH:mm}", regularFont)));   
                 document.Add(new Paragraph(" "));
 
                 PdfPTable table = new PdfPTable(4)
