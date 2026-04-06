@@ -12,24 +12,18 @@ namespace Konditerka
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class Cities
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
+        public Cities()
         {
-            this.Baskets = new HashSet<Baskets>();
+            this.Users = new HashSet<Users>();
         }
     
-        public int IdUser { get; set; }
-        public string NameUser { get; set; }
-        public int IdRole { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
         public int IdCity { get; set; }
+        public string NameCity { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Baskets> Baskets { get; set; }
-        public virtual Roles Roles { get; set; }
-        public virtual Cities Cities { get; set; }
+        public virtual ICollection<Users> Users { get; set; }
     }
 }

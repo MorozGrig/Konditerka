@@ -23,6 +23,8 @@
         <AssociationConnector Association="KonditerModel.FK_Orders_StatusOrders1" ManuallyRouted="false" />
         <AssociationConnector Association="KonditerModel.FK_OrdersCatalogs_Orders1" ManuallyRouted="false" />
         <AssociationConnector Association="KonditerModel.FK_Users_Roles1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KonditerModel.Cities" Width="1.5" PointX="0.75" PointY="18.25" />
+        <AssociationConnector Association="KonditerModel.FK_Users_Cities" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

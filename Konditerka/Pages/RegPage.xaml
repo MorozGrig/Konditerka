@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Konditerka.Pages"
-      mc:Ignorable="d" d:DesignWidth="800"
+      mc:Ignorable="d" d:DesignWidth="800" MinHeight="550"
       Title="RegPage">
 
     <Grid Background="#FF420046">
@@ -17,8 +17,9 @@
         <PasswordBox x:Name="PassBoxV" HorizontalAlignment="Center" Margin="0,243,0,0" VerticalAlignment="Top" Width="274" Height="31" AutomationProperties.Name="PassBoxV" PasswordChanged="PassBoxV_PasswordChanged" TabIndex="50" FontFamily="Arial Black"/>
         <Label Content="Введите почту" HorizontalAlignment="Center" Margin="-110,279,0,0" VerticalAlignment="Top" FontFamily="Arial Black" Foreground="#FF82DBFF" FontSize="20"/>
         <TextBox x:Name="EmailBox" HorizontalAlignment="Center" Margin="0,315,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Height="31" AutomationProperties.Name="EmailBox" TabIndex="100" FontFamily="Arial Black"/>
-        <Button x:Name="AddButton" Content="Зарегистрироватся" HorizontalAlignment="Center" Margin="0,357,0,0" VerticalAlignment="Top" Width="274" Height="37" FontFamily="Arial Black" FontSize="16" Background="#FFE0C14D" Foreground="Black" Click="AddButton_Click"/>
-        <Button x:Name="GoToAutogizButton" Content="Назад к авторизации" HorizontalAlignment="Center" Margin="0,399,0,0" VerticalAlignment="Top" Width="274" Height="37" FontFamily="Arial Black" FontSize="16" Background="#FFE0C14D" Foreground="Black" Click="GoToAutogizButton_Click"/>
-
+        <Button x:Name="AddButton" Content="Зарегистрироватся" HorizontalAlignment="Center" Margin="0,438,0,0" VerticalAlignment="Top" Width="274" Height="37" FontFamily="Arial Black" FontSize="16" Background="#FFE0C14D" Foreground="Black" Click="AddButton_Click"/>
+        <Button x:Name="GoToAutogizButton" Content="Назад к авторизации" HorizontalAlignment="Center" Margin="0,480,0,0" VerticalAlignment="Top" Width="274" Height="37" FontFamily="Arial Black" FontSize="16" Background="#FFE0C14D" Foreground="Black" Click="GoToAutogizButton_Click"/>
+        <Label Content="Выберите город" HorizontalAlignment="Center" Margin="-85,357,0,0" VerticalAlignment="Top" FontFamily="Arial Black" Foreground="#FF82DBFF" FontSize="20"/>
+        <ComboBox x:Name="CityBox" HorizontalAlignment="Center" Margin="0,390,0,0" VerticalAlignment="Top" Width="274" Height="31" AutomationProperties.Name="CityBox" TabIndex="100" FontFamily="Arial Black"></ComboBox>
     </Grid>
 </Page>

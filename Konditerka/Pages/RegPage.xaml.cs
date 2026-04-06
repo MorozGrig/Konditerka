@@ -26,6 +26,18 @@ namespace Konditerka.Pages
         public RegPage()
         {
             InitializeComponent();
+            Fill();
+        }
+
+        public void Fill()
+        {
+            CityBox.SelectedIndex = 0;
+            var city = AppConnect.model0db.Cities;
+            CityBox.Items.Add("Город");
+            foreach (var item in city)
+            {
+                CityBox.Items.Add(item.NameCity);
+            }
         }
 
         private void GoToAutogizButton_Click(object sender, RoutedEventArgs e)
@@ -46,7 +58,7 @@ namespace Konditerka.Pages
                 if (String.IsNullOrEmpty(LoginBox.Text) || String.IsNullOrEmpty(PassBox.Password) || String.IsNullOrEmpty(PassBoxV.Password) || String.IsNullOrEmpty(EmailBox.Text) ||
                     String.IsNullOrWhiteSpace(LoginBox.Text) || String.IsNullOrWhiteSpace(PassBox.Password) || String.IsNullOrWhiteSpace(PassBoxV.Password) || String.IsNullOrWhiteSpace(EmailBox.Text))
                 {
-                    MessageBox.Show("Заполнены все поля!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Заполнены не все поля!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                     return;
                 }
 
@@ -56,11 +68,24 @@ namespace Konditerka.Pages
                     return;
                 }
 
+                if (AppConnect.model0db.Users.Count(x => x.Email == EmailBox.Text) > 0)
+                {
+                    MessageBox.Show("Эта почта уже занята!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+
+                if (CityBox.SelectedIndex == 0)
+                {
+                    MessageBox.Show("Выберите город", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+
                 Users userobj = new Users()
                 {
                     NameUser = LoginBox.Text,
                     Password = PassBox.Password,
                     IdRole = 1,
+                    IdCity = CityBox.SelectedIndex,
                     Email = EmailBox.Text
                 };
                 AppConnect.model0db.Users.Add(userobj);

@@ -35,5 +35,6 @@ namespace Konditerka
         public virtual DbSet<StatusOrders> StatusOrders { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Cities> Cities { get; set; }
     }
 }

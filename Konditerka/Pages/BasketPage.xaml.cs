@@ -180,9 +180,6 @@ namespace Konditerka.Pages
                 string logoPath = GetLogoPath();
                 if (!string.IsNullOrWhiteSpace(logoPath) && File.Exists(logoPath))
                 {
-
-
-
                     iTextSharp.text.Image logoImage = iTextSharp.text.Image.GetInstance(logoPath);      
                     logoImage.ScaleToFit(120f, 120f);
                     logoImage.Alignment = Element.ALIGN_CENTER;
