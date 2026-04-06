@@ -80,6 +80,12 @@ namespace Konditerka.Pages
                     return;
                 }
 
+                if (!AppData.ValidationPhoneAndEmail.IsValidEmail(EmailBox.Text))
+                {
+                    MessageBox.Show("Некорректно набрана почта(test@exapmle.com)!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+
                 if (CityBox.SelectedIndex == 0)
                 {
                     MessageBox.Show("Выберите город", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
