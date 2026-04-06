@@ -68,6 +68,12 @@ namespace Konditerka.Pages
                     return;
                 }
 
+                if (AppConnect.model0db.Users.Count(x => x.Password == PassBox.Password) > 0)
+                {
+                    MessageBox.Show("Этот пароль уже занят!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return;
+                }
+
                 if (AppConnect.model0db.Users.Count(x => x.Email == EmailBox.Text) > 0)
                 {
                     MessageBox.Show("Эта почта уже занята!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
