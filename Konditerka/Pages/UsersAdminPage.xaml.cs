@@ -14,6 +14,7 @@ namespace Konditerka.Pages
         {
             InitializeComponent();
             RoleBox.ItemsSource = AppConnect.model0db.Roles.ToList();
+            CityBox.ItemsSource = AppConnect.model0db.Cities.ToList();
             RefreshData();
         }
 
@@ -26,6 +27,7 @@ namespace Konditerka.Pages
             EmailBox.Text = string.Empty;
             PasswordBox.Text = string.Empty;
             RoleBox.SelectedIndex = -1;
+            CityBox.SelectedIndex = -1;
         }
 
         private bool ValidateForm()
@@ -36,7 +38,7 @@ namespace Konditerka.Pages
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(EmailBox.Text) || !Regex.IsMatch(EmailBox.Text.Trim(), @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            if (string.IsNullOrWhiteSpace(EmailBox.Text) || !ValidationPhoneAndEmail.IsValidEmail(EmailBox.Text.Trim()))
             {
                 MessageBox.Show("Введите корректный email");
                 return false;
@@ -51,6 +53,12 @@ namespace Konditerka.Pages
             if (RoleBox.SelectedValue == null)
             {
                 MessageBox.Show("Выберите роль");
+                return false;
+            }
+
+            if (CityBox.SelectedValue == null)
+            {
+                MessageBox.Show("Выберите город");
                 return false;
             }
 
@@ -70,6 +78,7 @@ namespace Konditerka.Pages
             _selectedUser.Email = EmailBox.Text.Trim();
             _selectedUser.Password = PasswordBox.Text;
             _selectedUser.IdRole = (int)RoleBox.SelectedValue;
+            _selectedUser.IdCity = (int)CityBox.SelectedValue;
             AppConnect.model0db.SaveChanges();
             RefreshData();
         }
@@ -97,6 +106,7 @@ namespace Konditerka.Pages
             EmailBox.Text = _selectedUser.Email;
             PasswordBox.Text = _selectedUser.Password;
             RoleBox.SelectedValue = _selectedUser.IdRole;
+            CityBox.SelectedValue = _selectedUser.IdCity;
         }
     }
 }
