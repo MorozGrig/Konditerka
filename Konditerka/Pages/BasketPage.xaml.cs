@@ -30,13 +30,6 @@ namespace Konditerka.Pages
         {
             try
             {
-                if (!BasketManager.IsUserAuthorized())
-                {
-                    MessageBox.Show("Сначала войдите в учетную запись.");
-                    AppFrame.framemain.Navigate(new Authoriz());
-                    return;
-                }
-
                 _items = BasketManager.GetCurrentBasketItems();
                 BasketGrid.ItemsSource = _items;
                 TotalTextBlock.Text = $"Итого: {_items.Sum(x => x.PositionTotal):N2} ₽";
