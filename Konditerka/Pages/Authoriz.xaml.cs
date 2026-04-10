@@ -39,6 +39,7 @@ namespace Konditerka.Pages
                 if (userobj == null)
                 {
                     MessageBox.Show("Такого пользователя нет", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
+                    PassBox.Clear();
                 }
                 else
                 {
