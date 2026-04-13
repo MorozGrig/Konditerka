@@ -17,14 +17,27 @@
                 <DataGridTextColumn Header="Город" Binding="{Binding Cities.NameCity}"  Width="150"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10,0,0">
-            <TextBox x:Name="UserNameBox" Width="150" Height="30" Margin="0,0,8,0" FontFamily="Arial Black" TabIndex="50" ToolTip="Логин"/>
-            <TextBox x:Name="EmailBox" Width="220" Height="30" Margin="0,0,8,0" FontFamily="Arial Black" TabIndex="100" ToolTip="Почта"/>
-            <TextBox x:Name="PasswordBox" Width="120" Height="30" Margin="0,0,8,0" FontFamily="Arial Black" TabIndex="50" ToolTip="Пароль"/>
-            <ComboBox x:Name="RoleBox" Width="150" Height="30" Margin="0,0,8,0" DisplayMemberPath="NameRole" SelectedValuePath="IdRole" FontFamily="Arial Black"/>
-            <ComboBox x:Name="CityBox" Width="150" Height="30" Margin="0,0,8,0" DisplayMemberPath="NameCity" SelectedValuePath="IdCity" FontFamily="Arial Black"/>
-            <Button Content="Сохранить" Width="100" Height="30" Margin="0,0,8,0" Click="EditButton_Click" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
-            <Button Content="Удалить" Width="100" Height="30" Margin="0,0,8,0" Click="DeleteButton_Click" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
-        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,0">
+                <Label Content="Логин" Foreground="#FF82DBFF" FontFamily="Arial Black"/>
+                <Label Content="Почта" Foreground="#FF82DBFF" FontFamily="Arial Black" Margin="100,0,0,0"/>
+                <Label Content="Пароль" Foreground="#FF82DBFF" FontFamily="Arial Black" Margin="180,0,0,0"/>
+                <Label Content="Роль" Foreground="#FF82DBFF" FontFamily="Arial Black" Margin="68,0,0,0"/>
+                <Label Content="Город" Foreground="#FF82DBFF" FontFamily="Arial Black" Margin="115,0,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBox x:Name="UserNameBox" Width="150" Height="30" Margin="0,0,8,0" FontFamily="Arial Black" TabIndex="50" ToolTip="Логин" MaxLength="50"/>
+                <TextBox x:Name="EmailBox" Width="220" Height="30" Margin="0,0,8,0" FontFamily="Arial Black" TabIndex="100" ToolTip="Почта" MaxLength="100"/>
+                <TextBox x:Name="PasswordBox" Width="120" Height="30" Margin="0,0,8,0" FontFamily="Arial Black" TabIndex="50" ToolTip="Пароль" MaxLength="50"/>
+                <ComboBox x:Name="RoleBox" Width="150" Height="30" Margin="0,0,8,0" DisplayMemberPath="NameRole" SelectedValuePath="IdRole" FontFamily="Arial Black"/>
+                <ComboBox x:Name="CityBox" Width="150" Height="30" Margin="0,0,8,0" DisplayMemberPath="NameCity" SelectedValuePath="IdCity" FontFamily="Arial Black"/>
+                <Button Content="Сохранить" Width="100" Height="30" Margin="0,0,8,0" Click="EditButton_Click" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
+                <Button Content="Удалить" Width="100" Height="30" Margin="0,0,8,0" Click="DeleteButton_Click" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

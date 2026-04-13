@@ -16,14 +16,26 @@
                 <DataGridTextColumn Header="Статус" Binding="{Binding StatusOrders.NameStatusOrder}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10,0,0">
-            <TextBox  x:Name="UserIdBox" Width="90" Height="30" Margin="0,0,8,0" FontFamily="Arial Black" ToolTip="ID клиента" TabIndex="50"/>
-            <DatePicker x:Name="OrderDateBox" Width="140" Height="30" Margin="0,0,8,0" FontFamily="Arial Black" DisplayDateStart="2026/03/30"/>
-            <TextBox x:Name="OrderPriceBox" Width="120" Height="30" Margin="0,0,8,0" FontFamily="Arial Black" ToolTip="Сумма" TabIndex="50"/>
-            <ComboBox x:Name="StatusBox" Width="180" Height="30" Margin="0,0,8,0" DisplayMemberPath="NameStatusOrder" SelectedValuePath="IdStatusOrder" FontFamily="Arial Black"/>
-            <Button Content="Добавить" Width="100" Height="30" Margin="0,0,8,0" Click="AddButton_Click" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
-            <Button Content="Сохранить" Width="100" Height="30" Margin="0,0,8,0" Click="EditButton_Click" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
-            <Button Content="Удалить" Width="100" Height="30" Margin="0,0,8,0" Click="DeleteButton_Click" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
-        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Label Content="ID" Foreground="#FF82DBFF" FontFamily="Arial Black"/>
+                <Label Content="Дата заказа" Foreground="#FF82DBFF" FontFamily="Arial Black" Margin="70,0,0,0"/>
+                <Label Content="Сумма" Foreground="#FF82DBFF" FontFamily="Arial Black" Margin="55,0,0,0"/>
+                <Label Content="Статус" Foreground="#FF82DBFF" FontFamily="Arial Black" Margin="73,0,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBox  x:Name="UserIdBox" Width="90" Height="30" Margin="0,0,8,0" FontFamily="Arial Black" ToolTip="ID клиента" TabIndex="50" MaxLength="50"/>
+                <DatePicker x:Name="OrderDateBox" Width="140" Height="30" Margin="0,0,8,0" FontFamily="Arial Black" DisplayDateStart="2026/03/30"/>
+                <TextBox x:Name="OrderPriceBox" Width="120" Height="30" Margin="0,0,8,0" FontFamily="Arial Black" ToolTip="Сумма" TabIndex="50" MaxLength="50"/>
+                <ComboBox x:Name="StatusBox" Width="180" Height="30" Margin="0,0,8,0" DisplayMemberPath="NameStatusOrder" SelectedValuePath="IdStatusOrder" FontFamily="Arial Black"/>
+                <Button Content="Добавить" Width="100" Height="30" Margin="0,0,8,0" Click="AddButton_Click" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
+                <Button Content="Сохранить" Width="100" Height="30" Margin="0,0,8,0" Click="EditButton_Click" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
+                <Button Content="Удалить" Width="100" Height="30" Margin="0,0,8,0" Click="DeleteButton_Click" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

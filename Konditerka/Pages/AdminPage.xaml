@@ -22,6 +22,8 @@
                     FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
             <Button Content="Пользователи" Width="140" Height="32" Margin="0,0,8,0" Click="UsersButton_Click"
                     FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
+            <Button x:Name="CitiesButton" Content="Города" Width="140" Height="32" Margin="0,0,8,0" Click="CitiesButton_Click"
+                    FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D"/>
             <Button x:Name="GoToCatalogButton" Content="Назад к каталогу" Width="140" Height="32" Margin="0,0,8,0" FontFamily="Arial Black" Foreground="Black" Background="#FFE0C14D" Click="GoToCatalogButton_Click"/>
         </StackPanel>
 

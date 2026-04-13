@@ -38,5 +38,10 @@ namespace Konditerka.Pages
         {
             AppFrame.framemain.Navigate(new PageOutput());
         }
+
+        private void CitiesButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminContentFrame.Navigate(new CitiesAdminPage());
+        }
     }
 }
