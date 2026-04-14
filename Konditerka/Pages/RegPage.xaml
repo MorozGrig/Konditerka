@@ -24,7 +24,7 @@
                     <Setter Property="Background" Value="#FF91009A"/>
                     <Setter Property="BorderBrush" Value="#FFE0C14D"/>
                     <Setter Property="BorderThickness" Value="1"/>
-                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Foreground" Value="#FF82DBFF"/>
                     <Setter Property="Padding" Value="8,4"/>
                     <Setter Property="Template">
                         <Setter.Value>
@@ -63,7 +63,7 @@
                     <Setter Property="Background" Value="#FF91009A"/>
                     <Setter Property="BorderBrush" Value="#FFE0C14D"/>
                     <Setter Property="BorderThickness" Value="1"/>
-                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Foreground" Value="#FF82DBFF"/>
                     <Setter Property="Padding" Value="8,4"/>
                     <Setter Property="Template">
                         <Setter.Value>
